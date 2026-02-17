@@ -15,6 +15,8 @@ while True:
 
     if pilihan_pemain == pilihan_mesin:
         print(f" Kedua Pemain sama-sama memilih {pilihan_pemain}. kalian seri💪")
+        skor_mesin += 1
+        skor_pemain += 1
     elif pilihan_pemain == "gunting":
         if pilihan_mesin == "kertas":
             print(" gunting mengalahkan kertas, kamu menang!😁")
