@@ -1,18 +1,24 @@
 import random
 import colorama
+from prettytable import PrettyTable
 from colorama import Fore, Style
+# agar warna di auto clear per baris
 colorama.init(autoreset= True)
+# inisiasi prettytable dengan t dan nama kolom
+t = PrettyTable(["skor kamu", "skor mesin"])
 
 print ("\n ==================================================================")
 print (" Selamat Datang Pada Game Gunting Batu Kertas 👋👋")
 print (" Kamu Akan Melawan Mesin Dan Lihat Apakah Kamu Akan Menang! 😁")
-print (" ================================================================== \n")
+print (" ==================================================================")
 skor_pemain = 0
 skor_mesin = 0
+total_ronde = 0
 while True:
     
     kemungkinan = ["gunting","batu","kertas"]
-    pilihan_pemain = input(" masukkan pilihan kamu (gunting / batu / kertas): ")
+    pilihan_pemain = input(" \n masukkan pilihan kamu (gunting / batu / kertas): ")
+    total_ronde += 1
     pilihan_mesin = random.choice(kemungkinan)
     print (f" \n pilihan kamu {pilihan_pemain}, dan pilihan mesin {pilihan_mesin} \n ")
 
@@ -44,8 +50,10 @@ while True:
 
     main_lagi = input(" \n mau main lagi? (y/n):")
     if main_lagi.lower() != "y":
-        print("\n terimakasih sudah bermain. kapan kapan coba lagi ya 👋👋👋")
-        print(f"\n skor kamu : {skor_pemain} skor mesin : {skor_mesin}")
+        print(f" \n Total Ronde Yang Kamu Mainkan: {total_ronde} ")
+        t.title = " HASIL AKHIR PERMAINAN"
+        t.add_row([skor_pemain, skor_mesin])
+        print(t)
         if skor_pemain > skor_mesin:
             print(Fore.GREEN + "\n selamat kamu menang!")
         elif skor_pemain == skor_mesin:  
