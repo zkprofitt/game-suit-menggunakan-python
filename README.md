@@ -1,13 +1,13 @@
-##👊✋✌️GASUT
+## 👊✋✌️GASUT
 /
 Game Suit sederhana berbasis CLI yang dibuat menggunakan python
 
-##📚Library yang digunakan
+### 📚Library yang digunakan
 -[] prettytable
 -[] colorama
 -[] random
 
-##🛠️hal yang harus dijalankan di terminal sebelum running project ini
+### 🛠️hal yang harus dijalankan di terminal sebelum running project ini
 '''bash
 $pip install prettytable
 $pip install random
